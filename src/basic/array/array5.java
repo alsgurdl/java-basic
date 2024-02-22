@@ -17,15 +17,16 @@ public class array5 {
         // 6. 찾은 인덱스를 통해 새로운 이름으로 수정한다.
         // 7. 위 내용을 수정이 정확히 완료될때까지 반복한다.
 
-         System.out.println("수정타겟");
-        boolean flag = true;
-         while (flag) {
+        System.out.println("수정타겟");
+        boolean flag = false;
+         while (true) {
+
              String name = sc.next();
 
              for (int i = 0; i < kakao.length; i++) {
                  if (name.equals(kakao[i])) {
                      System.out.println(i+ " 번째 인덱스" );
-                     flag = false;
+                     flag = true;
 
                  }
                  System.out.println("수정할 이름: ");
@@ -38,8 +39,8 @@ public class array5 {
 
              }
 
-
+             System.out.println(Arrays.toString(kakao));
          }
-        System.out.println(Arrays.toString(kakao));
+
     }
 }
