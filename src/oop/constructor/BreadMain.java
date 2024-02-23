@@ -29,7 +29,8 @@ public class BreadMain {
        p.name = "피자빵";
        p.price = 1000;
        p.info();
-
+        Bread c = new Bread("초코케이크", 3000, "초콜렛");
+        c.info();
     }
 
 }

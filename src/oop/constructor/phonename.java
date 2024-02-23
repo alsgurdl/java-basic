@@ -17,7 +17,7 @@ public class phonename {
 
         System.out.println("------------------");
 
-        phone iPone = new phone("아이폰" );
+        phone iPone = new phone("아이폰15","스페이스 그레이" );
         iPone.showSpec();
 
 
