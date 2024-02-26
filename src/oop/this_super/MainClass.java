@@ -11,8 +11,16 @@ public class MainClass {
         Player p2 = new Player("플레이2");
         p2.characterInfo();
         System.out.println("-----------------------------");
-        Player p3 = new Player("플레이3");
+        Player p3 = new Player("플레이3",100);
         p3.characterInfo();
+        p1.attack(p2);
+        p2.attack(p3);
+        p3.attack(p1);
+
+        System.out.println("-----------------------------");
+        Warrior w1 = new Warrior("전사");
+        w1.characterInfo();
+
 
     }
 }
