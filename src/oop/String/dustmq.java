@@ -48,6 +48,8 @@ public class dustmq {
            String n1 = name.substring(2,4);
             String n2 = name.substring(4,6);
             System.out.println(ye+"년" + n1+"월" +n2 +  "일" + b +"세"+ m);
+
+
             break;
         }
 
