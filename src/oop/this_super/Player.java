@@ -7,17 +7,41 @@ public class Player {
     int hp;
 Player(){
     System.out.println("palyer의 기본 생성자 호출");
-    level = 1;
-    atk = 3;
-    hp =50;
+    this.level = 1;
+    this.atk = 3;
+    this.hp =50;
 }
     Player(String name){
+    this();
         System.out.println("플레이2");
-        System.out.println("this의 주소값"+this);
-        level = 1;
-        atk = 3;
-        hp =50;
+
+
+//        level = 1;
+//        atk = 3;
+//        hp =50;
         this.name = name;
+    }
+    Player(String name, int hp){
+    this(name); // 다른 생성자 호출은 생성자 내에서 최상단에 취치해 있어야한다
+    System.out.println("player의 3번 생성자");
+        this.hp = hp;
+    }
+    void attack(Player target){
+//        System.out.println("때리는 = " + this.name);
+//        System.out.println("맞는 = " + target.name);
+//
+        if(this == target){
+            System.out.println("스스로 때릴수 없다");
+            return;
+        }
+//출력 메시지 x가 y를 공격합니다
+        System.out.printf("%s가 %s를 공격합니다\n",this.name, target.name);
+        //맞는 사람의 hp를 10낯추고 나의 체력을 5회복
+        //결과를 출력(나의 체력은 .. 상대체력은 ..)
+        target.hp -=10;
+        this.hp +=5;
+        System.out.printf("나의체력은 %d 상대의체력%d\n",this.hp,target.hp);
+
     }
 
     void characterInfo(){
@@ -26,7 +50,7 @@ Player(){
         System.out.println("level = " + level);
         System.out.println("공격력 = " + atk);
         System.out.println("체력 = " + hp);
-        System.out.println("지금 이 메서드를 부른 객체의 아이디: " + this.name);
+       
     }
 
 
