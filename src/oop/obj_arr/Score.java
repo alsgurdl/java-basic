@@ -11,9 +11,76 @@ scoreInfo() 메서드를 선언해 주세요.
 
 - 캡슐화를 구현해서 작성해 주세요. (생성자는 맘대로 하세요.)
 */
-    public void scoreInfo(){
-        System.out.printf("이름%s\n 국어%d\n 영어%d\n 수학%d\n 총점%d\n 평균%f",this.name);
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public int getKo() {
+        return ko;
+    }
+
+    public void setKo(int ko) {
+        this.ko = ko;
+    }
+
+    public int getEng() {
+        return eng;
+    }
+
+    public void setEng(int eng) {
+        this.eng = eng;
+    }
+
+    public int getMath() {
+        return math;
+    }
+
+    public void setMath(int math) {
+        this.math = math;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+/*
+    public void setTotal() {
+        this.total = this.ko + this.eng + this.math;
+    }
+*/
+    public double getAve() {
+        return ave;
+    }
+/*
+    public void setAve() {
+        this.ave = this.total/3.0;
+    }
+*/
+    //총점과 평듄을 한번에 계산해서 세팅하는 메서드
+    public  void setTotalAndAvg(){
+        this.total = this.ko + this.eng + this.math;
+        this.ave = this.total/3.0;
+    }
+    private int ko;
+   private int eng;
+   private int math;
+   private int total;
+   private double ave;
+   public void scoreInfo(){
+       System.out.printf("이름%s\n국어 %d\n영어 %d\n수학 %d\n총점 %d\n평균%.2f\n",name,ko,eng,math,total,ave);
+   }
+//점수 유효성 검증
+    public boolean isValidateScore(int score){
+       if (score > 100 || score <0){
+           System.out.println("유효하지 않은 점수");
+           return false;
+       }
+
+       return true;
+    }
 }

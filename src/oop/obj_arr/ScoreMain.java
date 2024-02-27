@@ -20,30 +20,59 @@ scoreInfo()를 모두 불러주세요. (반복문)
 주의!) 입력이 중간에 그만두어진다면, 배열의 나머지 인덱스는
 모두 null로 가득 차 있습니다. (null.scoreInfo() -> 에러)
          */
-        Scanner sc = new Scanner(System.in);
-        Score[] pop = new Score[100];
-        for (int i = 0; i < pop.length; i++) {
+   Score[] scoreList = new Score[100];
+   Scanner sc = new Scanner(System.in);
+        System.out.println("***점수입력프로그램***");
+        System.out.println("그만입력시종료");
+        int idx = 0;
+   //while (scoreList[scoreList.length-1] == null)
+        while (idx != scoreList.length)
+   {
+       System.out.print("이름입력");
+       String name = sc.next();
+       if(name.equals("그만")){
+           System.out.println("입력종료");
+           break;
+       }
+        Score s = new Score();
+       System.out.println("국어: ");
+       int kor = sc.nextInt();
+       if (!s.isValidateScore(kor)){
+           continue;
+       }
+       System.out.println("영어: ");
+       int eng = sc.nextInt();
+       if (!s.isValidateScore(eng)){
+           continue;
+       }
+       System.out.println("수학: ");
+       int math = sc.nextInt();
+       if (!s.isValidateScore(math)){
+           continue;
+       }
+    s.setName(name);
+       s.setKo(kor);
+       s.setEng(eng);
+       s.setMath(math);
+       s.setTotalAndAvg();
+//       int total = kor +eng+math;
+//       double avg = total /3.0;
+//       s.setTotal(total);
+//       s.setav(av);
+scoreList[idx] = s;
+idx++;
+       System.out.println("***일력완료***\n");
 
-
-            System.out.println("이름");
-            String name = sc.next();
-            System.out.println("국어");
-            int ko = sc.nextInt();
-            System.out.println("영어");
-            int en = sc.nextInt();
-            System.out.println("수학");
-            int ma = sc.nextInt();
-            if (name.equals("그만")){
-                return;
+   }//입력 반복문 끝
+        for (Score score : scoreList) {
+            if(score == null) {
+                break;
             }
-            int chd = ko+en+ma;
-            double vud = chd/3;
-            pop[i] = new Score(name,ko,en,ma,chd,vud);
+            score.scoreInfo();
+            System.out.println("---------------------");
         }
-        for (Score person : pop) {
-            person.scoreInfo();
-        }
-
         sc.close();
+
+
     }
 }
