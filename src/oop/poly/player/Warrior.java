@@ -1,4 +1,21 @@
 package oop.poly.player;
+//    public void rush(Player p){
+//        System.out.printf("%s님이 %s님에세 돌진을 사용\n",this.name,p.name);
+//        int damage; String job;
+//        if(p instanceof Warrior){
+//            damage=10; job="전사";
+//        } else if (p instanceof Mage) {
+//            damage=20; job="마법사";
+//        }else {
+//            damage=15; job="사냥꾼";
+//        }
+//         p.hp -= damage;
+//        System.out.printf("%s님%s이 %d의피해\n",p.name,job,damage);
+//        System.out.printf("%s님은 남은 채력 %d\n",p.name,p.hp);
+//        System.out.println("---------------------------");
+//
+//    }
+
 
 public class Warrior extends Player {
     int rage;
@@ -23,23 +40,10 @@ public class Warrior extends Player {
 
 - main에서 객체를 생성한 후 호출하셔서 잘 적용됐는지 확인해 주세요.
          */
+public void rush(){
 
-    public void rush(Player p){
-        System.out.printf("%s님이 %s님에세 돌진을 사용\n",this.name,p.name);
-        int damage; String job;
-        if(p instanceof Warrior){
-            damage=10; job="전사";
-        } else if (p instanceof Mage) {
-            damage=20; job="마법사";
-        }else {
-            damage=15; job="사냥꾼";
-        }
-         p.hp -= damage;
-        System.out.printf("%s님%s이 %d의피해\n",p.name,job,damage);
-        System.out.printf("%s님은 남은 채력 %d\n",p.name,p.hp);
-        System.out.println("---------------------------");
+}
 
-    }
 
     void characterInfo() {
         super.characterInfo();
