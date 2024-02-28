@@ -37,6 +37,10 @@ ex) m1.blizzard(???); (배열 쓰라는 소리에요.)
         Mage m2 = new Mage("마법사2");
         Hunter h1 = new Hunter("사냥꾼1");
         Hunter h2 = new Hunter("사냥꾼2");
-
+     Player[] targets = {w1,w2,m2,h1,h2};
+     m1.blizzard(targets);
+     w1.rush(w2);
+     w1.rush(m1);
+     w1.rush(h2);
     }
 }

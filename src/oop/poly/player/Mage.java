@@ -23,7 +23,14 @@ Mage(String name){
     super(name);
     this.mana =100;
 }
-public void blizzard(){
+public void blizzard(Player[] tar){
+    System.out.printf("%s시전 ",this.name);
+    for (Player p : tar) {
+        int me = (int) (Math.random()*6+10);
+        p.hp -= me;
+        System.out.printf("%s  %d",p.name,me,p.hp);
+    }
+
 
 }
 

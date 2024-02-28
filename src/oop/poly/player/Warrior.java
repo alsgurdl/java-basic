@@ -40,8 +40,14 @@ public class Warrior extends Player {
 
 - main에서 객체를 생성한 후 호출하셔서 잘 적용됐는지 확인해 주세요.
          */
-public void rush(){
-
+public void rush(Player per){
+    System.out.printf("%s님 %s뎀지 뎀지",this.name,per.name);
+    int de; String jo;
+    if (per instanceof Warrior){
+  de = 10; jo = "전사";
+    } else if (per instanceof Mage) {
+        de = 10; jo = "전사";
+    }
 }
 
 
