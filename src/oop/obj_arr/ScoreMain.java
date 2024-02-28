@@ -50,11 +50,8 @@ scoreInfo()를 모두 불러주세요. (반복문)
        if (!s.isValidateScore(math)){
            continue;
        }
-    s.setName(name);
-       s.setKo(kor);
-       s.setEng(eng);
-       s.setMath(math);
-       s.setTotalAndAvg();
+       s = new Score(name, kor, eng, math);
+
 //       int total = kor +eng+math;
 //       double avg = total /3.0;
 //       s.setTotal(total);

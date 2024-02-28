@@ -71,7 +71,18 @@ scoreInfo() 메서드를 선언해 주세요.
    private int math;
    private int total;
    private double ave;
-   public void scoreInfo(){
+
+    public Score() {}
+
+    public Score(String name, int ko, int eng, int math) {
+        this.name = name;
+        this.ko = ko;
+        this.eng = eng;
+        this.math = math;
+        this.setTotalAndAvg();
+    }
+
+    public void scoreInfo(){
        System.out.printf("이름%s\n국어 %d\n영어 %d\n수학 %d\n총점 %d\n평균%.2f\n",name,ko,eng,math,total,ave);
    }
 //점수 유효성 검증
