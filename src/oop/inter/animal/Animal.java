@@ -1,4 +1,4 @@
-package oop.inter.animal.;
+package oop.inter.animal;
 
 public interface Animal {
 
