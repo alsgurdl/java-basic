@@ -26,5 +26,11 @@ public class dustmq {
         for (Uper uper : up) {
             System.out.println(uper);
         }
+        for (int i = 0; i < up.size(); i++) {
+            if (up.get(i).getName().equals("홍길")){
+                up.remove(i);
+            }
+        }
+        System.out.println(up);
     }
 }
