@@ -71,7 +71,7 @@ public class MovieRepository {
     // 문자열을 숫자로 변환하는 과정에서 예외 발생 가능성이 있기 때문에 throws 추가.
     private List<Movie> searchByPubYear(String keyword) throws NumberFormatException {
         List<Movie> searchedList = new ArrayList<>();
-        
+
         // 입력값을 String으로 받았기 때문에 int로 변환해서 비교
         int targetYear = Integer.parseInt(keyword);
 
@@ -112,23 +112,36 @@ public class MovieRepository {
     public Movie deleteMovie(int delMovieNum) {
         return movieDatabase.remove(delMovieNum);
     }
+
+    public List<Movie> searchByRental(boolean possible) {
+        List<Movie> searchedList = new ArrayList<>();
+
+        if (possible) { // 대여 가능한 Movie들만 거르기
+            for (int key : movieDatabase.keySet()) {
+                Movie movie = movieDatabase.get(key);
+                if (!movie.isRental()) {
+                    searchedList.add(movie);
+                }
+            }
+
+        } else { // 이미 대여중인 Movie들만 거르기
+            for (int key : movieDatabase.keySet()) {
+                Movie movie = movieDatabase.get(key);
+                if (movie.isRental()) {
+                    searchedList.add(movie);
+                }
+            }
+        }
+
+        return searchedList;
+    }
+
+    // 번호에 맞는 영화 객체를 단 하나만 리턴하는 메서드.
+    public Movie searchMovie(int movieNumber) {
+        return movieDatabase.get(movieNumber);
+    }
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
