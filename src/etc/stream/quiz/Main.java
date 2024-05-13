@@ -67,16 +67,13 @@ transactions.stream()
 
         System.out.println("============================");
         // 연습 6: Cambridge에 사는 거래자의 모든 거래액의 총합 출력.
-        List<Integer> cambridge = transactions.stream()
+        int cambridge = transactions.stream()
                 .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
-                .map(transaction -> transaction.getValue())
-                .collect(toList());
-        int a = 0;
-        for (Integer i : cambridge) {
-         a += i;
-        }
+                .mapToInt(value -> value.getValue())
+                .sum();
+        System.out.println(cambridge);
 
-        System.out.println(a);
+
         System.out.println("============================");
         // 연습 7: 모든 거래에서 최고 거래액은 얼마인가?
         Transaction transaction1 = transactions.stream()
